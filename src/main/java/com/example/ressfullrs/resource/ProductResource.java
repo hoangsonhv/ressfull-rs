@@ -31,8 +31,8 @@ public class ProductResource {
     }
 
     @POST
-    public Product store(Product product){
-        return productRepository.save(product);
+    public Product save(Product obj){
+        return productRepository.save(obj);
     }
 
     @PUT

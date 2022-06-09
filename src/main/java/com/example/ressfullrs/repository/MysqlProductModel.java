@@ -14,10 +14,7 @@ public class MysqlProductModel implements ProductRepository{
     public Product save(Product obj) {
         try {
             Connection connection = ConnectionHelper.getConnection();
-            String sqlQuery = "insert into products " +
-                    "(name , price) " +
-                    "values " +
-                    "(?, ?)";
+            String sqlQuery = "insert into products (name,price) values (?,?)";
             PreparedStatement preparedStatement =  connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, obj.getName());
             preparedStatement.setDouble(2, obj.getPrice());

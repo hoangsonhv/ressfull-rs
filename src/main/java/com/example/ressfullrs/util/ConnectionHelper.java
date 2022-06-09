@@ -12,8 +12,9 @@ public class ConnectionHelper {
     public static Connection getConnection(){
         try {
             if (connection == null || connection.isClosed()){
-                Class.forName("com.mysql.cj.jdbc.Driver");
+                Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
+                System.out.println("Connect success !");
             }
         }catch (Exception e){
             e.printStackTrace();
